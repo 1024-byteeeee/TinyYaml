@@ -5,9 +5,7 @@ plugins {
 
 repositories {
     maven {
-        name = '1024_byteeeee Maven'
-        url = "http://nas.1024byteeeee.top:16999"
-        allowInsecureProtocol = true
+        url = "https://nas.1024byteeeee.top:16999/releases"
     }
     mavenCentral()
 }
@@ -26,8 +24,7 @@ publishing {
 
     repositories {
         maven {
-            url = "http://nas.1024byteeeee.top:16999/releases"
-            allowInsecureProtocol = true
+            url = "https://nas.1024byteeeee.top:16999/releases"
             credentials {
                 username = System.getenv('MAVEN_USERNAME')
                 password = System.getenv('MAVEN_PASSWORD')
