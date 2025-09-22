@@ -1,0 +1,32 @@
+plugins {
+    id 'java'
+    id 'maven-publish'
+}
+
+repositories {
+    maven {
+        name = '1024_byteeeee Maven'
+        url = "http://nas.1024byteeeee.top:16999"
+        allowInsecureProtocol = true
+    }
+    mavenCentral()
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+        }
+    }
+
+    repositories {
+        maven {
+            url = "http://nas.1024byteeeee.top:16999/releases"
+            allowInsecureProtocol = true
+            credentials {
+                username = System.getenv('MAVEN_USERNAME')
+                password = System.getenv('MAVEN_PASSWORD')
+            }
+        }
+    }
+}
