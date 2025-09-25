@@ -15,9 +15,13 @@ java {
     targetCompatibility = JavaVersion.VERSION_1_8
 }
 
+group = project.maven_group
+archivesBaseName = project.archives_base_name
+
 publishing {
     publications {
         mavenJava(MavenPublication) {
+            artifactId archivesBaseName
             from components.java
         }
     }
